@@ -30,7 +30,7 @@ public class Typefaces {
     public static Typeface getRobotoBold() {
         Assert.isMainThread();
         if (sRobotoBold == null) {
-            sRobotoBold = Typeface.create(Typeface.SANS_SERIF, Typeface.BOLD);
+            sRobotoBold = Typeface.create(null, Typeface.BOLD);
         }
         return sRobotoBold;
     }
@@ -38,7 +38,7 @@ public class Typefaces {
     public static Typeface getRobotoNormal() {
         Assert.isMainThread();
         if (sRobotoNormal == null) {
-            sRobotoNormal = Typeface.create(Typeface.SANS_SERIF, Typeface.NORMAL);
+            sRobotoNormal = Typeface.create(nul, Typeface.NORMAL);
         }
         return sRobotoNormal;
     }
