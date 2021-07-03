@@ -1038,6 +1038,11 @@ public class ConversationMessageView extends FrameLayout implements View.OnClick
         }
 
         if (view == mMessageTextView) {
+            // Avoid trying to reselect the message
+            if (isSelected()) {
+                return false;
+            }
+
             // Preemptively handle the long click event on message text so it's not handled by
             // the link spans.
             return performLongClick();
@@ -1203,7 +1208,6 @@ public class ConversationMessageView extends FrameLayout implements View.OnClick
                 // This touch event is a long click, preemptively handle this touch event so that
                 // the link span won't get a onClicked() callback.
                 mIsLongClick = false;
-                return true;
             }
 
             if (event.getActionMasked() == MotionEvent.ACTION_DOWN) {
